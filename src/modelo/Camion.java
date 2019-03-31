@@ -2,11 +2,11 @@ package modelo;
 
 public class Camion {
 
-	String patente;
-	double tara;
-	String modelo;
-	String chasis;
-	double kilometraje;
+	private String patente;
+	private double tara;
+	private String modelo;
+	private String chasis;
+	private double kilometraje;
 
 	public Camion(String patente, double tara, String modelo, String chasis, double kilometraje) {
 		this.patente = patente;
