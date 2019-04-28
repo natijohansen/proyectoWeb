@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import com.mysql.cj.jdbc.Driver;
 
 public class Conexion {
 	private static final String HOST = "jdbc:mysql://localhost:3306/proyectofinal";

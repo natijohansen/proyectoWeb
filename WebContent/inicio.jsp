@@ -31,22 +31,36 @@
     <title>Inicio</title>
   </head>
   <body class="text-center">
-    <form class="form-signin">
-  <img class="mb-4" src="imagenes/camiones.png" alt="" width="120" height="120">
-  <h1 class="h3 mb-3 font-weight-normal">Establecimiento El Orgullo</h1>
+    <form action="loginServlet" class="form-signin" method="post" role="form">
+    
+      <% String mensajeError =(String) request.getAttribute("mensajeError");
+        if(mensajeError !=null){         //Si ocurrió algún problema con el registro se muestra el msj correspondiente     
+                %>                          
+            <div class="form-group">
+              <div class="col-md-6">  
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                      <%=mensajeError %>
+                </div>
+              </div>
+            </div>
+      <% } %>
+                
+      <img class="mb-4" src="imagenes/camiones.png" alt="" width="120" height="120">
+      <h1 class="h3 mb-3 font-weight-normal">Establecimiento El Orgullo</h1>
   
-  <label for="inputEmail" class="sr-only">Usuario</label>
-  <input type="input" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus>
+      <label for="inputUser" class="sr-only">Usuario</label>
+      <input type="text" id="inputUser" class="form-control" placeholder="Usuario" name="inputUser" required autofocus>
   
-  <label for="inputPassword" class="sr-only">Contraseña</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Recordarme
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
-</form>
+      <label for="inputPassword" class="sr-only">Contraseña</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="inputPassword" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Recordarme
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+    </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
